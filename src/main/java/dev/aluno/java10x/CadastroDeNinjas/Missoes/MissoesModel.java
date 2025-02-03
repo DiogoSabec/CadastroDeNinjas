@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tb_missoes")
 @NoArgsConstructor
@@ -25,6 +27,6 @@ public class MissoesModel {
     // One mission can have many ninjas
     @Column(name = "ninjas")
     @OneToMany(mappedBy = "missoes")
-    private NinjaModel ninjas;
+    private List<NinjaModel> ninjas;
 
 }
