@@ -4,9 +4,17 @@ package dev.aluno.java10x.CadastroDeNinjas.Missoes;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/mission")
 public class MissoesController {
+
+    private MissoesService missoesService;
+
+    public MissoesController(MissoesService missoesService) {
+        this.missoesService = missoesService;
+    }
 
     // CRUD
     // Add missao (Create)
@@ -17,8 +25,8 @@ public class MissoesController {
 
     // Show all ninjas (Read)
     @GetMapping("/all")
-    public String showAllMissao(){
-        return "Show all Missions";
+    public List<MissoesModel> showAllMissao(){
+        return missoesService.showAllMissao();
     }
 
     // Show all ninjas by ID (Read)
