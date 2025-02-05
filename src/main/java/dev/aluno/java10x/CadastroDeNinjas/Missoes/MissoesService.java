@@ -3,6 +3,7 @@ package dev.aluno.java10x.CadastroDeNinjas.Missoes;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MissoesService {
@@ -16,4 +17,11 @@ public class MissoesService {
     public List<MissoesModel> showAllMissao(){
         return missoesRepository.findAll();
     }
+
+    public MissoesModel showMissaoByID(Long id){
+        Optional<MissoesModel> missoesById = missoesRepository.findById(id);
+        return missoesById.orElse(null);
+    }
+
+
 }

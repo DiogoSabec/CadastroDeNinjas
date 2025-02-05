@@ -24,15 +24,15 @@ public class MissoesController {
     }
 
     // Show all ninjas (Read)
-    @GetMapping("/all")
+    @GetMapping("/list")
     public List<MissoesModel> showAllMissao(){
         return missoesService.showAllMissao();
     }
 
     // Show all ninjas by ID (Read)
-    @GetMapping("/allID")
-    public String showMissaoByID(){
-        return "Show all Missions by ID";
+    @GetMapping("/list/{id}")
+    public MissoesModel showMissaoByID(@PathVariable Long id){
+        return missoesService.showMissaoByID(id);
     }
     // Update Ninja by ID (Update)
     @PutMapping("/updateID")
