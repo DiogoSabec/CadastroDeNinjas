@@ -30,4 +30,10 @@ public class NinjaService {
         return ninjaRepository.save(ninja);
     }
 
+    // Delete ninja by ID, must be a VOID
+    public void deleteNinjaByID(Long id){
+        ninjaRepository.deleteById(id);
+    }
+
+
 }
