@@ -27,4 +27,7 @@ public class MissoesService {
         return missoesRepository.save(missao);
     }
 
+    public void deleteMissaoByID(Long id){
+        missoesRepository.deleteById(id);
+    }
 }

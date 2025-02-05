@@ -42,9 +42,9 @@ public class MissoesController {
     }
 
     // Delete Ninja (Delete)
-    @DeleteMapping("/deleteID")
-    public String deleteMissaoByID(){
-        return "Delete Mission by ID";
+    @DeleteMapping("/delete/{id}")
+    public void deleteMissaoByID(@PathVariable Long id){
+        missoesService.deleteMissaoByID(id);
     }
 
 }
