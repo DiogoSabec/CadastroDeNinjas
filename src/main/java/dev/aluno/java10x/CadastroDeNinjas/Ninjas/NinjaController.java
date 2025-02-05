@@ -27,16 +27,17 @@ public class NinjaController {
     }
 
     // Show all ninjas (Read)
-    @GetMapping("/all")
+    @GetMapping("/list")
     public List<NinjaModel> showAllNinjas(){
         return ninjaService.showAllNinjas();
     }
 
     // Show all ninjas by ID (Read)
-    @GetMapping("/allID")
-    public String showNinjaByID(){
-        return "Show all ninjas by ID";
+    @GetMapping("/list/{id}")
+    public NinjaModel showNinjaByID(@PathVariable Long id){
+        return ninjaService.showNinjaByID(id);
     }
+
     // Update Ninja by ID (Update)
     @PutMapping("/updateID")
     public String updateNinja(){
