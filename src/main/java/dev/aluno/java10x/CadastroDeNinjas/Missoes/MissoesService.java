@@ -1,7 +1,5 @@
 package dev.aluno.java10x.CadastroDeNinjas.Missoes;
 
-import dev.aluno.java10x.CadastroDeNinjas.Ninjas.NinjaModel;
-import dev.aluno.java10x.CadastroDeNinjas.Ninjas.NinjaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
