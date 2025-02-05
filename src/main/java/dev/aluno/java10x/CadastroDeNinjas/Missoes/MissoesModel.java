@@ -31,4 +31,6 @@ public class MissoesModel {
     @JsonIgnore
     private List<NinjaModel> ninjas;
 
+    
+
 }

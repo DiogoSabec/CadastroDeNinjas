@@ -23,5 +23,8 @@ public class MissoesService {
         return missoesById.orElse(null);
     }
 
+    public MissoesModel createMissao(MissoesModel missao){
+        return missoesRepository.save(missao);
+    }
 
 }

@@ -2,12 +2,13 @@ package dev.aluno.java10x.CadastroDeNinjas.Missoes;
 
 // Controllers are for creating routes to the user.
 
+import dev.aluno.java10x.CadastroDeNinjas.Ninjas.NinjaModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/mission")
+@RequestMapping("/missions")
 public class MissoesController {
 
     private MissoesService missoesService;
@@ -19,8 +20,8 @@ public class MissoesController {
     // CRUD
     // Add missao (Create)
     @PostMapping("/create")
-    public String createMissao() {
-        return "Mission Created";
+    public MissoesModel createMissao(@RequestBody MissoesModel missao) {
+        return missoesService.createMissao(missao);
     }
 
     // Show all ninjas (Read)
