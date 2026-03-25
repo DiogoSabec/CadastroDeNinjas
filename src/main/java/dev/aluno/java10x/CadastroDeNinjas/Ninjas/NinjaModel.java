@@ -21,7 +21,7 @@ public class NinjaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "nome")
+    @Column(name = "nome")
     private String nome;
 
     @Column(unique = true)
@@ -37,4 +37,9 @@ public class NinjaModel {
     @ManyToOne
     @JoinColumn(name = "missoes_id") // Foreing key
     private MissoesModel missoes;
+
+    //Because I have the DTO created I can add the var of the migration before
+    @Column(name = "rank")
+    private String rank;
 }
+
